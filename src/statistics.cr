@@ -20,4 +20,8 @@ module Statistics
   def standard_deviation
     variance ** 0.5
   end
+
+  def frequencies
+    group_by(&.itself).map { |k, v| [k, v.size] }.to_h
+  end
 end

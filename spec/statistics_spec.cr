@@ -31,4 +31,10 @@ describe Statistics do
     [5, 10, 15].standard_deviation.should be_close(4.08248, 0.001)
     [-1, 0, 1].standard_deviation.should be_close(0.81649658093, 0.001)
   end
+
+  it "#frequencies" do
+    [2, 2, 2].frequencies.should eq({2 => 3})
+    [1, 2, 3].frequencies.should eq({1 => 1, 2 => 1, 3 => 1})
+    [-1, 1, 2, 3, 3].frequencies.should eq({1 => 1, 2 => 1, 3 => 2, -1 => 1})
+  end
 end
