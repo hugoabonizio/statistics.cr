@@ -37,4 +37,10 @@ describe Statistics do
     [1, 2, 3].frequencies.should eq({1 => 1, 2 => 1, 3 => 1})
     [-1, 1, 2, 3, 3].frequencies.should eq({1 => 1, 2 => 1, 3 => 2, -1 => 1})
   end
+
+  it "#mode" do
+    [2, 2, 2].mode.should eq(2)
+    [1, 2, 3].mode.should eq(nil)
+    [-1, 1, 2, 3, 3].mode.should eq(3)
+  end
 end

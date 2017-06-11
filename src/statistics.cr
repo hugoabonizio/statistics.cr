@@ -24,4 +24,9 @@ module Statistics
   def frequencies
     group_by(&.itself).map { |k, v| [k, v.size] }.to_h
   end
+
+  def mode
+    return if self == uniq
+    frequencies.to_a.sort_by(&.last).last.first
+  end
 end
