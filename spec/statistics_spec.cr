@@ -9,6 +9,7 @@ describe Statistics do
     [1, 2, 3].mean.should eq(2)
     [6, 6, 6].mean.should eq(6)
     [1.1, 1.2, 1.3].mean.should eq(1.2)
+    [0, 10].mean.should eq(5)
   end
 
   it "#median" do
@@ -48,5 +49,11 @@ describe Statistics do
     [2, 2, 2, 3, 3, 3].modes.should eq([2, 3])
     [-1, 1, 2, 3, 3].modes.should eq([3])
     [-1, -1, 2, 2, 6, 6].modes.should eq([-1, 2, 6])
+  end
+
+  it "#range" do
+    [2, 2, 2].range.should eq(0)
+    [-1, 0, 1].range.should eq(2)
+    [1, 2, 3, 4, 5].range.should eq(4)
   end
 end

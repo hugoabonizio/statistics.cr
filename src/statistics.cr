@@ -35,4 +35,8 @@ module Statistics
     sorted = frequencies.to_a.sort_by(&.last)
     sorted.select { |i| i[1] == sorted.last[1] }.map(&.first)
   end
+
+  def range
+    max - min
+  end
 end
