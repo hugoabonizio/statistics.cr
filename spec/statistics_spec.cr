@@ -43,4 +43,10 @@ describe Statistics do
     [1, 2, 3].mode.should eq(nil)
     [-1, 1, 2, 3, 3].mode.should eq(3)
   end
+
+  it "#modes" do
+    [2, 2, 2, 3, 3, 3].modes.should eq([2, 3])
+    [-1, 1, 2, 3, 3].modes.should eq([3])
+    [-1, -1, 2, 2, 6, 6].modes.should eq([-1, 2, 6])
+  end
 end

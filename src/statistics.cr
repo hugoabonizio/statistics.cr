@@ -27,6 +27,12 @@ module Statistics
 
   def mode
     return if self == uniq
-    frequencies.to_a.sort_by(&.last).last.first
+    modes.try(&.first)
+  end
+
+  def modes
+    return if self == uniq
+    sorted = frequencies.to_a.sort_by(&.last)
+    sorted.select { |i| i[1] == sorted.last[1] }.map(&.first)
   end
 end
